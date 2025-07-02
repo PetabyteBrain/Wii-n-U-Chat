@@ -2,7 +2,7 @@
   "expo": {
     "scheme": "acme",
     "name": "Wii-N-U-Chat",
-    "slug": "Wii-N-U-Chat",
+    "slug": "wii-n-u-chat",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -28,6 +28,9 @@
     },
     "plugins": [
       "expo-router"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
     ]
   }
 }

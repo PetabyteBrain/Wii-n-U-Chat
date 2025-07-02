@@ -1,7 +1,7 @@
 import { Text, StyleSheet, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
-export default function JumboText({ children }) {
+export default function JumboTextTitle({ children }) {
   return (
     <LinearGradient
       colors={["rgba(133,172,115,0.29)", "rgba(69,110,106,0.29)"]}
@@ -18,8 +18,9 @@ const styles = StyleSheet.create({
   gradient: {
     borderRadius: 15,
     paddingHorizontal: 20,
-    paddingVertical: 10,
+    paddingVertical: 50,
     alignSelf: "center",
+    marginBottom: 100,
   },
   text: {
     color: "#FFFFFF",
