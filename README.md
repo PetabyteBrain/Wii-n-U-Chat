@@ -9,7 +9,7 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/wiiu-chat">
+  <a href="https://github.com/petabytebrain/Wii-n-U-Chat">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -18,14 +18,14 @@
   <p align="center">
     Eine einfache, intuitive Chat-App für gemeinschaftliche Kommunikation in Echtzeit.
     <br />
-    <a href="https://github.com/github_username/wiiu-chat"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/petabytebrain/Wii-n-U-Chat"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/wiiu-chat">View Demo</a>
+    <a href="https://github.com/petabytebrain/Wii-n-U-Chat">View Demo</a>
     &middot;
-    <a href="https://github.com/github_username/wiiu-chat/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/petabytebrain/Wii-n-U-Chat/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     &middot;
-    <a href="https://github.com/github_username/wiiu-chat/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/petabytebrain/Wii-n-U-Chat/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
@@ -97,8 +97,8 @@ Contributions are what make the open source community such an amazing place to l
 4. Push to the Branch (`git push origin feature/AmazingFeature`)  
 5. Open a Pull Request
 
-<a href="https://github.com/github_username/wiiu-chat/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=github_username/wiiu-chat" alt="Top Contributors" />
+<a href="https://github.com/petabytebrain/Wii-n-U-Chat/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=petabytebrain/Wii-n-U-Chat" alt="Top Contributors" />
 </a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -112,7 +112,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 ## Contact
 
 Dein Name – [@twitter_handle](https://twitter.com/twitter_handle) – email@email_client.com  
-Projekt-URL: [https://github.com/github_username/wiiu-chat](https://github.com/github_username/wiiu-chat)
+Projekt-URL: [https://github.com/petabytebrain/Wii-n-U-Chat](https://github.com/petabytebrain/Wii-n-U-Chat)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -125,16 +125,16 @@ Projekt-URL: [https://github.com/github_username/wiiu-chat](https://github.com/g
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/wiiu-chat.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/wiiu-chat/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/wiiu-chat.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/wiiu-chat/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/wiiu-chat.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/wiiu-chat/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/wiiu-chat.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/wiiu-chat/issues
-[license-shield]: https://img.shields.io/github/license/github_username/wiiu-chat.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/wiiu-chat/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/petabytebrain/Wii-n-U-Chat.svg?style=for-the-badge
+[contributors-url]: https://github.com/petabytebrain/Wii-n-U-Chat/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/petabytebrain/Wii-n-U-Chat.svg?style=for-the-badge
+[forks-url]: https://github.com/petabytebrain/Wii-n-U-Chat/network/members
+[stars-shield]: https://img.shields.io/github/stars/petabytebrain/Wii-n-U-Chat.svg?style=for-the-badge
+[stars-url]: https://github.com/petabytebrain/Wii-n-U-Chat/stargazers
+[issues-shield]: https://img.shields.io/github/issues/petabytebrain/Wii-n-U-Chat.svg?style=for-the-badge
+[issues-url]: https://github.com/petabytebrain/Wii-n-U-Chat/issues
+[license-shield]: https://img.shields.io/github/license/petabytebrain/Wii-n-U-Chat.svg?style=for-the-badge
+[license-url]: https://github.com/petabytebrain/Wii-n-U-Chat/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png
