@@ -66,8 +66,7 @@ Die App bietet:
 ### Built With
 
 * [![React][React.js]][React-url]
-* [![Next][Next.js]][Next-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+* [![Firebase][Firebase.js]][Firebase-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -138,9 +137,7 @@ Projekt-URL: [https://github.com/petabytebrain/Wii-n-U-Chat](https://github.com/
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React.js]: https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Next-url]: https://nextjs.org/
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
+[Firebase.js]: https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black
+[Firebase-url]: https://firebase.google.com/
