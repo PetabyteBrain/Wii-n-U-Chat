@@ -1,5 +1,6 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Alert } from "react-native";
 import { useState, useEffect } from "react";
+import NetInfo from "@react-native-community/netinfo";  // Import
 import { Stack, useRouter } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Font from "expo-font";
@@ -12,7 +13,9 @@ import NameField from "../components/NameField";
 export default function HomeScreen() {
   const [username, setUsername] = useState("");
   const [fontsLoaded, setFontsLoaded] = useState(false);
-  
+  const [isConnected, setIsConnected] = useState(true); // Track connection
+
+  const router = useRouter();
 
   useEffect(() => {
     async function loadFonts() {
@@ -24,9 +27,28 @@ export default function HomeScreen() {
     loadFonts();
   }, []);
 
-  const router = useRouter();
+  // Internetverbindung prüfen
+  useEffect(() => {
+    const unsubscribe = NetInfo.addEventListener(state => {
+      setIsConnected(state.isConnected);
+      if (!state.isConnected) {
+        Alert.alert(
+          "Keine Internetverbindung",
+          "Bitte verbinde dich mit dem Internet, um die App zu nutzen.",
+          [{ text: "OK" }]
+        );
+      }
+    });
+
+    return () => unsubscribe(); // Cleanup on unmount
+  }, []);
 
   const handleSubmit = async () => {
+    if (!isConnected) {
+      Alert.alert("Keine Internetverbindung", "Bitte verbinde dich mit dem Internet, bevor du fortfährst.");
+      return;
+    }
+
     if (username.trim()) {
       try {
         await AsyncStorage.setItem('username', username.trim());
@@ -39,9 +61,7 @@ export default function HomeScreen() {
     }
   };
 
-
   if (!fontsLoaded) {
-    // Optionally show a loading indicator or null while fonts load
     return null;
   }
 
