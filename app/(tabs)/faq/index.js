@@ -21,11 +21,11 @@ const faqData = [
   },
   {
     question: "How can I report other users?",
-    answer: "Currently, there is no feature to report users directly within the app. If you encounter any issues, please contact the support team through the FAQ or settings page.",
+    answer: "Currently, there is no feature to report users directly within the app. If you encounter any issues, please contact the support team through the following email address: noreply@WiinUChat.inc (get rekt)",
   },
   {
     question: "Will there be updates?",
-    answer: "Yes! The app will continue to receive updates to improve functionality, add new features, and enhance user experience based on feedback.",
+    answer: "No.",
   },
 ];
 
