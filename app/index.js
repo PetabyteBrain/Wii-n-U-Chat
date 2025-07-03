@@ -29,7 +29,18 @@ export default function HomeScreen() {
     loadFonts();
   }, []);
 
-  // Internetverbindung prüfen
+  useEffect(() => {
+    const checkUsername = async () => {
+      const storedUsername = await AsyncStorage.getItem("username");
+      if (storedUsername) {
+        router.replace('/chat'); // use `replace` to avoid going back to this screen
+      }
+    };
+  
+    checkUsername();
+  }, []);
+  
+
   useEffect(() => {
     const unsubscribe = NetInfo.addEventListener(state => {
       setIsConnected(state.isConnected);
