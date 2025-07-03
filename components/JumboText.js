@@ -22,9 +22,10 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   text: {
+    fontFamily: "Merriweather",
     color: "#FFFFFF",
     fontSize: 40,
-    fontWeight: "900",
+    fontWeight: "600",
     textAlign: "center",
   },
 });

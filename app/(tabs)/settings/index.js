@@ -5,19 +5,18 @@ import { LinearGradient } from "expo-linear-gradient";
 import * as Font from "expo-font";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import JumboTextTitle from "../components/JumboTextTitle";
-import AppButton from "../components/AppButton";
-import NameField from "../components/NameField";
+import JumboText from "../../../components/JumboText";
+import JumboTextsubTitle from "../../../components/JumboTextsubTitle";
+import NameField from "../../../components/NameField";
 
-export default function HomeScreen() {
+export default function SettingsScreen() {
   const [username, setUsername] = useState("");
   const [fontsLoaded, setFontsLoaded] = useState(false);
-  
 
   useEffect(() => {
     async function loadFonts() {
       await Font.loadAsync({
-        Merriweather: require("../assets/fonts/Merriweather/Merriweather-Italic-VariableFont_opsz,wdth,wght.ttf"),
+        Merriweather: require("../../../assets/fonts/Merriweather/Merriweather-Italic-VariableFont_opsz,wdth,wght.ttf"),
       });
       setFontsLoaded(true);
     }
@@ -38,25 +37,19 @@ export default function HomeScreen() {
       alert("Please enter a username");
     }
   };
-
-
-  if (!fontsLoaded) {
-    // Optionally show a loading indicator or null while fonts load
-    return null;
-  }
-
-  return (
-    <LinearGradient
-      colors={["#426B69", "#8BB174"]}
-      start={{ x: 0.5, y: 0 }}
-      end={{ x: 0.5, y: 1 }}
-      style={styles.container}
-    >
-      <Stack.Screen options={{ title: "Home" }} />
-      <JumboTextTitle>Wii & U Chat</JumboTextTitle>
-      <NameField username={username} setUsername={setUsername} onSubmit={handleSubmit} />
-    </LinearGradient>
-  );
+    return (
+        <LinearGradient
+          colors={["#426B69", "#8BB174"]}
+          start={{ x: 0.5, y: 0 }}
+          end={{ x: 0.5, y: 1 }}
+          style={styles.container}
+        >
+          <Stack.Screen options={{ title: "Settings" }} />
+          <JumboText>Wii & U Chat</JumboText>
+          <JumboTextsubTitle>Settings</JumboTextsubTitle>
+          <NameField username={username} setUsername={setUsername} onSubmit={handleSubmit} />
+        </LinearGradient>
+    );
 }
 
 const styles = StyleSheet.create({

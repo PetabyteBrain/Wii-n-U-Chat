@@ -18,14 +18,14 @@ const styles = StyleSheet.create({
   gradient: {
     borderRadius: 15,
     paddingHorizontal: 20,
-    paddingVertical: 50,
+    paddingVertical: 5,
     alignSelf: "center",
     marginBottom: 100,
   },
   text: {
     fontFamily: "Merriweather",
     color: "#FFFFFF",
-    fontSize: 40,
+    fontSize: 30,
     fontWeight: "600",
     textAlign: "center",
   },
