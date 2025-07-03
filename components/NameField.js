@@ -17,19 +17,7 @@ export default function NameField({ username, setUsername, onSubmit }) {
       />
       <TouchableOpacity onPress={onSubmit} style={styles.button} activeOpacity={0.8}>
         <Text style={styles.buttonText}>Submit</Text>
-        <Svg
-          width={20}
-          height={20}
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="white"
-          strokeWidth={2}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          style={{ marginLeft: 6 }}
-        >
-          <Path d="M5 12h14M12 5l7 7-7 7" />
-        </Svg>
+        <SendArrow width={20} height={20} style={{ marginLeft: 6 }} />
       </TouchableOpacity>
     </View>
   );
