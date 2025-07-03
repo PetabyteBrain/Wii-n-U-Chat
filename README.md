@@ -21,7 +21,7 @@
     <a href="https://github.com/petabytebrain/Wii-n-U-Chat"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/petabytebrain/Wii-n-U-Chat">View Demo</a>
+    <a href="https://www.figma.com/proto/hNDhRhqckmscNqQXFEQWf9/Wii-uChat?node-id=1-4&p=f&t=R0mCrzaIFHWz54G7-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A4">View Demo</a>
     &middot;
     <a href="https://github.com/petabytebrain/Wii-n-U-Chat/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     &middot;
@@ -35,17 +35,14 @@
     <li><a href="#about-the-project">About The Project</a></li>
     <li><a href="#built-with">Built With</a></li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 **Wii & U Chat** ist eine benutzerfreundliche Chat-Applikation, die Nutzer in einem gemeinsamen Chatraum verbindet. Ziel ist es, digitale Kommunikation so unkompliziert wie möglich zu gestalten – ohne überladene Funktionen, sondern mit Fokus auf eine zentrale, gemeinschaftliche Kommunikation.
 
@@ -76,15 +73,6 @@ Nach Eingabe eines Benutzernamens gelangen Nutzer direkt in den Chatraum, in dem
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Roadmap
-
-- [ ] Dark Mode
-- [ ] Nachrichten löschen
-- [ ] Private Nachrichten
-- [ ] Multilingual Support
-- [ ] Emoji-Integration
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Contributing
 
@@ -110,18 +98,14 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Dein Name – [@twitter_handle](https://twitter.com/twitter_handle) – email@email_client.com  
-Projekt-URL: [https://github.com/petabytebrain/Wii-n-U-Chat](https://github.com/petabytebrain/Wii-n-U-Chat)
+- Spyros Catéchis - spyros.catechis@bbcag.ch
+- Nicolas Ammeter - nicolas.ammetter@bbcag.ch
+- David Borne - david.borne@bbcag.ch
+- Projekt-URL: [https://github.com/petabytebrain/Wii-n-U-Chat](https://github.com/petabytebrain/Wii-n-U-Chat)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Acknowledgments
 
-* OpenAI ChatGPT für redaktionelle Hilfe
-* [othneildrew/Best-README-Template](https://github.com/othneildrew/Best-README-Template)
-* Deine Community & Tester:innen
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [contributors-shield]: https://img.shields.io/github/contributors/petabytebrain/Wii-n-U-Chat.svg?style=for-the-badge
