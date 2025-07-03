@@ -24,6 +24,7 @@ export default function HomeLayout() {
                 tabBarLabelStyle: {
                     fontSize: 18,
                     marginTop: 20, // Text weiter nach unten verschoben
+                    /*fontFamily: "Merriweather",*/
                 },
             }}
         >

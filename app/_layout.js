@@ -1,16 +1,22 @@
-import { Slot } from "expo-router";
+import { Slot, usePathname } from "expo-router";
 import { View, StyleSheet } from "react-native";
-import JumboText from "../components/JumboText"; // Passe den Pfad an, falls nötig
+import JumboText from "../components/JumboText"; // globaler Header
 
 export default function RootLayout() {
+  const pathname = usePathname();
+
+  // Nur auf HomeScreen (index.js) wird KEIN JumboText angezeigt
+  const hideHeaderOnHome = pathname === "/" || pathname === "/index";
+
   return (
     <View style={styles.container}>
-      {/* Globaler Header */}
-      <View style={styles.header}>
-        <JumboText>Wii & U Chat</JumboText>
-      </View>
+      {/* Nur anzeigen, wenn NICHT auf HomeScreen */}
+      {!hideHeaderOnHome && (
+        <View style={styles.header}>
+          <JumboText>Wii & U Chat</JumboText>
+        </View>
+      )}
 
-      {/* Rest der App */}
       <View style={styles.content}>
         <Slot />
       </View>
@@ -23,7 +29,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
-    paddingTop: 50, // Statusbar-Offset (optional)
+    paddingTop: 50, // z. B. für Statusbar
     paddingBottom: 10,
     backgroundColor: "rgba(66,107,105,255)",
     zIndex: 1,

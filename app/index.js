@@ -85,7 +85,6 @@ export default function HomeScreen() {
       end={{ x: 0.5, y: 1 }}
       style={styles.container}
     >
-      <Stack.Screen options={{ title: "Home" }} />
       <JumboTextTitle>Wii & U Chat</JumboTextTitle>
       <NameField username={username} setUsername={setUsername} onSubmit={handleSubmit} />
     </LinearGradient>
