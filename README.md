@@ -45,7 +45,6 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 **Wii & U Chat** ist eine benutzerfreundliche Chat-Applikation, die Nutzer in einem gemeinsamen Chatraum verbindet. Ziel ist es, digitale Kommunikation so unkompliziert wie möglich zu gestalten – ohne überladene Funktionen, sondern mit Fokus auf eine zentrale, gemeinschaftliche Kommunikation.
 
@@ -101,10 +100,10 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Spyros Catéchis - spyros.catechis@bbcag.ch
-Nicolas Ammeter - nicolas.ammetter@bbcag.ch
-David Borne - david.borne@bbcag.ch
-Projekt-URL: [https://github.com/petabytebrain/Wii-n-U-Chat](https://github.com/petabytebrain/Wii-n-U-Chat)
+- Spyros Catéchis - spyros.catechis@bbcag.ch
+- Nicolas Ammeter - nicolas.ammetter@bbcag.ch
+- David Borne - david.borne@bbcag.ch
+- Projekt-URL: [https://github.com/petabytebrain/Wii-n-U-Chat](https://github.com/petabytebrain/Wii-n-U-Chat)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
