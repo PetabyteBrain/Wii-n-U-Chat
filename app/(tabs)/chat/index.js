@@ -3,12 +3,14 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { Stack, useFocusEffect } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Font from "expo-font";
+
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { database } from "../../../firebase";
 import { ref, push, set, onValue, serverTimestamp } from "firebase/database";
 
 import JumboText from "../../../components/JumboText";
 import SendArrow from "../../../assets/send-arrow.svg";
+import MessageBubble from "../../../components/MessageBubble";
 
 export default function ChatScreen() {
   const [username, setUsername] = useState("");
@@ -115,11 +117,7 @@ export default function ChatScreen() {
         data={messages}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <View style={styles.messageItem}>
-            <Text style={styles.messageUser}>{item.username}:</Text>
-            <Text style={styles.messageText}>{item.message}</Text>
-            <Text style={styles.messageTime}>{formatTimestamp(item.timestamp)}</Text>
-          </View>
+          <MessageBubble message={item} isMe={item.username === username} />
         )}
         onContentSizeChange={scrollToBottom}
         onLayout={scrollToBottom}
