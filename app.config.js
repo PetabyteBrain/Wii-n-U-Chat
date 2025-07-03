@@ -5,6 +5,7 @@ export default {
     name: "Wii n U Chat",
     slug: "wii-n-u-chat",
     scheme: "acme",
+    icon: "./assets/adaptive-icon.png",
     version: "1.0.0",
     extra: {
       firebaseApiKey: process.env.FIREBASE_API_KEY,
