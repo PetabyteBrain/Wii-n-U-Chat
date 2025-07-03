@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { useState, useEffect } from "react";
 import { Stack, useRouter } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
@@ -8,11 +8,13 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import JumboText from "../../../components/JumboText";
 import JumboTextsubTitle from "../../../components/JumboTextsubTitle";
 import NameField from "../../../components/NameField";
+import DeleteAccountButton from "../../../components/DeleteAccountButton";
 
 export default function SettingsScreen() {
   const [username, setUsername] = useState("");
   const [fontsLoaded, setFontsLoaded] = useState(false);
-
+  const router = useRouter();
+  
   useEffect(() => {
     async function loadFonts() {
       await Font.loadAsync({
@@ -23,7 +25,6 @@ export default function SettingsScreen() {
     loadFonts();
   }, []);
 
-  const router = useRouter();
 
   const handleSubmit = async () => {
     if (username.trim()) {
@@ -37,6 +38,7 @@ export default function SettingsScreen() {
       alert("Please enter a username");
     }
   };
+
     return (
         <LinearGradient
           colors={["#426B69", "#8BB174"]}
@@ -47,6 +49,8 @@ export default function SettingsScreen() {
           <Stack.Screen options={{ title: "Settings" }} />
           <JumboTextsubTitle>Settings</JumboTextsubTitle>
           <NameField username={username} setUsername={setUsername} onSubmit={handleSubmit} />
+
+          <DeleteAccountButton/>
         </LinearGradient>
     );
 }
