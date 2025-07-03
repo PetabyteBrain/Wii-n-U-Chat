@@ -33,8 +33,8 @@ export default function HomeScreen() {
       setIsConnected(state.isConnected);
       if (!state.isConnected) {
         Alert.alert(
-          "Keine Internetverbindung",
-          "Bitte verbinde dich mit dem Internet, um die App zu nutzen.",
+          "No Internetconnection",
+          "Please connect to the Internet to use the App.",
           [{ text: "OK" }]
         );
       }
@@ -45,7 +45,7 @@ export default function HomeScreen() {
 
   const handleSubmit = async () => {
     if (!isConnected) {
-      Alert.alert("Keine Internetverbindung", "Bitte verbinde dich mit dem Internet, bevor du fortfährst.");
+      Alert.alert("No Internetconnection", "Please connect to the internet to continue");
       return;
     }
 
