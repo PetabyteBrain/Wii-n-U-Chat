@@ -14,11 +14,11 @@ export default function SettingsScreen() {
   const [username, setUsername] = useState("");
   const [fontsLoaded, setFontsLoaded] = useState(false);
   const router = useRouter();
-  
+
   useEffect(() => {
     async function loadFonts() {
       await Font.loadAsync({
-        Merriweather: require("../../../assets/fonts/Merriweather/Merriweather-Italic-VariableFont_opsz,wdth,wght.ttf"),
+        Merriweather: require("../../../assets/fonts/Merriweather/Merriweather-VariableFont_opsz,wdth,wght.ttf"),
       });
       setFontsLoaded(true);
     }

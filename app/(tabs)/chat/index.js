@@ -5,7 +5,9 @@ import {
   TextInput,
   FlatList,
   TouchableOpacity,
+  Alert,
 } from "react-native";
+import NetInfo from "@react-native-community/netinfo";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Stack, useFocusEffect } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
@@ -16,7 +18,6 @@ import { ref, push, set, onValue, serverTimestamp } from "firebase/database";
 
 import SendArrow from "../../../assets/send-arrow.svg";
 
-// MessageBubble direkt hier eingefügt
 function MessageBubble({ message, isMe }) {
   return (
     <View
@@ -57,6 +58,21 @@ export default function ChatScreen() {
   const [username, setUsername] = useState("");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
+  const [isConnected, setIsConnected] = useState(true);
+
+  useEffect(() => {
+    const unsubscribe = NetInfo.addEventListener(state => {
+      setIsConnected(state.isConnected);
+      if (!state.isConnected) {
+        Alert.alert(
+          "No Internet Connection",
+          "Messages cannot be sent while offline.",
+          [{ text: "OK" }]
+        );
+      }
+    });
+    return () => unsubscribe();
+  }, []);
 
   const flatListRef = useRef(null);
 
@@ -113,23 +129,32 @@ export default function ChatScreen() {
   }, []);
 
   const sendMessage = () => {
+    if (!isConnected) {
+      Alert.alert(
+        "No Internet Connection",
+        "Please connect to the internet to send messages."
+      );
+      return;
+    }
+  
     if (!message.trim()) return;
-
+  
     if (!username) {
       alert("No username set");
       return;
     }
-
+  
     const newMessageRef = push(ref(database, "messages"));
-
+  
     set(newMessageRef, {
       username,
       message: message.trim(),
       timestamp: serverTimestamp(),
     });
-
+  
     setMessage("");
   };
+  
 
   return (
     <LinearGradient

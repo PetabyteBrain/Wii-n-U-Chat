@@ -2,7 +2,7 @@
 
 import { View, Text, StyleSheet, Alert } from "react-native";
 import { useState, useEffect } from "react";
-import NetInfo from "@react-native-community/netinfo";  // Import
+import NetInfo from "@react-native-community/netinfo";
 import { Stack, useRouter } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Font from "expo-font";
