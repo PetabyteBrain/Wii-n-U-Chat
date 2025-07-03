@@ -76,15 +76,6 @@ Nach Eingabe eines Benutzernamens gelangen Nutzer direkt in den Chatraum, in dem
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Roadmap
-
-- [ ] Dark Mode
-- [ ] Nachrichten löschen
-- [ ] Private Nachrichten
-- [ ] Multilingual Support
-- [ ] Emoji-Integration
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Contributing
 
