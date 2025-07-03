@@ -10,7 +10,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/petabytebrain/Wii-n-U-Chat">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/logo.png" alt="Logo" width="250" height="156">
   </a>
 
   <h3 align="center">Wii & U Chat</h3>
@@ -62,8 +62,10 @@ Die App bietet:
 
 ### Built With
 
-* [![React][React.js]][React-url]
+* [![Expo][Expo.dev]][Expo-url]
+* [![React Native][React.js]][React-url]
 * [![Firebase][Firebase.js]][Firebase-url]
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -125,3 +127,5 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [React-url]: https://reactjs.org/
 [Firebase.js]: https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black
 [Firebase-url]: https://firebase.google.com/
+[Expo.dev]: https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white
+[Expo-url]: https://expo.dev/
