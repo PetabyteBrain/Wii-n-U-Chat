@@ -10,7 +10,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/petabytebrain/Wii-n-U-Chat">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/logo.png" alt="Logo" width="250" height="156">
   </a>
 
   <h3 align="center">Wii & U Chat</h3>
