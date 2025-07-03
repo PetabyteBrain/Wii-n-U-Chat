@@ -1,54 +1,97 @@
-import { Tabs } from "expo-router"
-import { Text } from "react-native"
-import Ionicons from "@expo/vector-icons/Ionicons"
+import { Tabs } from "expo-router";
+import { Text, View } from "react-native";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 export default function HomeLayout() {
     return (
-    <Tabs>
-        <Tabs.Screen
-            name="settings/index"
-            options={{
-                title: "Settings",
-                tabBarIcon: ({ color }) => (
-                    <Ionicons
-                        size={28}
-                        style={{ marginBottom: -3 }}
-                        name="cog"
-                        color={color}
-                    />
-                ),
+        <Tabs
+            screenOptions={{
+                tabBarStyle: {
+                    backgroundColor: "rgb(96, 132, 108)",
+                    height: 100, // etwas höher, damit genug Platz für alles bleibt
+                },
+                tabBarActiveTintColor: "#FFFFFF",
+                tabBarInactiveTintColor: "rgba(255, 255, 255, 0.5)",
+                tabBarIconStyle: {
+                    marginBottom: 10,
+                    padding: 0,
+                },
+                tabBarLabelStyle: {
+                    fontSize: 18,
+                    marginTop: 20, // Text weiter nach unten verschoben
+                },
             }}
-        />
-        <Tabs.Screen
-            name="chat/index"
-            options={{
-                title: "Chat",
-                tabBarIcon: ({ color }) => (
-                    <Ionicons
-                        size={28}
-                        style={{ marginBottom: -3 }}
-                        name="chatbox-ellipses"
-                        color={color}
-                    />
-                ),
-            }}
-        />
-        <Tabs.Screen
-            name="faq/index"
-            options={{
-                title: "Faq",
-                tabBarIcon: ({ color }) => (
-                    <Ionicons
-                        size={28}
-                        style={{ marginBottom: -3 }}
-                        name="help-circle"
-                        color={color}
-                    />
-                ),
-            }}
-        />
-
-    </Tabs>
-    )
-   }
-   
+        >
+            <Tabs.Screen
+                name="settings/index"
+                options={{
+                    title: "Settings",
+                    tabBarIcon: ({ color }) => (
+                        <View
+                            style={{
+                                width: 80,
+                                height: 80,
+                                justifyContent: "center",
+                                alignItems: "center",
+                                marginTop: 45,
+                            }}
+                        >
+                            <Ionicons
+                                size={50}
+                                name="cog"
+                                color={color}
+                            />
+                        </View>
+                    ),
+                }}
+            />
+            <Tabs.Screen
+                name="chat/index"
+                options={{
+                    title: "Chat",
+                    tabBarIcon: ({ color }) => (
+                        <View
+                            style={{
+                                width: 80,
+                                height: 80,
+                                justifyContent: "center",
+                                alignItems: "center",
+                                borderRadius: 40,
+                                marginTop: 45,
+                            }}
+                        >
+                            <Ionicons
+                                size={50}
+                                name="chatbox-ellipses"
+                                color={color}
+                            />
+                        </View>
+                    ),
+                }}
+            />
+            <Tabs.Screen
+                name="faq/index"
+                options={{
+                    title: "Faq",
+                    tabBarIcon: ({ color }) => (
+                        <View
+                            style={{
+                                width: 80,
+                                height: 80,
+                                justifyContent: "center",
+                                alignItems: "center",
+                                marginTop: 45,
+                            }}
+                        >
+                            <Ionicons
+                                size={50}
+                                name="help-circle"
+                                color={color}
+                            />
+                        </View>
+                    ),
+                }}
+            />
+        </Tabs>
+    );
+}
