@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, TextInput, Button, FlatList } from "react-native";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Stack } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Font from "expo-font";
@@ -15,6 +15,8 @@ export default function ChatScreen() {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
 
+  const flatListRef = useRef(null);
+
   // Load username from AsyncStorage on mount
   useEffect(() => {
     AsyncStorage.getItem("username").then((storedUsername) => {
@@ -22,6 +24,18 @@ export default function ChatScreen() {
       else alert("Username not found! Please set it first.");
     });
   }, []);
+
+  const scrollToBottom = () => {
+    if (flatListRef.current && messages.length > 0) {
+      setTimeout(() => {
+        flatListRef.current.scrollToEnd({ animated: true });
+      }, 100);
+    }
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   // Listen for new messages in Realtime DB
   useEffect(() => {
@@ -87,6 +101,7 @@ export default function ChatScreen() {
       <JumboText>Wii & U Chat</JumboText>
 
       <FlatList
+        ref={flatListRef}
         style={styles.messagesList}
         data={messages}
         keyExtractor={(item) => item.id}
@@ -97,6 +112,8 @@ export default function ChatScreen() {
             <Text style={styles.messageTime}>{formatTimestamp(item.timestamp)}</Text>
           </View>
         )}
+        onContentSizeChange={scrollToBottom}
+        onLayout={scrollToBottom}
       />
 
       <View style={styles.inputRow}>
