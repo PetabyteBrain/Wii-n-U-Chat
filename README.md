@@ -21,7 +21,7 @@
     <a href="https://github.com/petabytebrain/Wii-n-U-Chat"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/petabytebrain/Wii-n-U-Chat">View Demo</a>
+    <a href="[https://github.com/petabytebrain/Wii-n-U-Chat](https://www.figma.com/proto/hNDhRhqckmscNqQXFEQWf9/Wii-uChat?node-id=1-4&p=f&t=R0mCrzaIFHWz54G7-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A4)">View Demo</a>
     &middot;
     <a href="https://github.com/petabytebrain/Wii-n-U-Chat/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     &middot;
