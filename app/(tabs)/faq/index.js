@@ -8,24 +8,24 @@ import JumboTextsubTitle from "../../../components/JumboTextsubTitle";
 
 const faqData = [
   {
-    question: "Was ist Wii & U Chat?",
-    answer: "Wii & U Chat ist eine Kommunikationsplattform, auf der du mit Freunden chatten kannst – inspiriert vom klassischen Wii U Erlebnis.",
+    question: "What is Wii & U Chat?",
+    answer: "Wii & U Chat is a user-friendly chat application that connects users in a shared chatroom. It provides a simple and intuitive platform where users can exchange messages in real time in a single common space.",
   },
   {
-    question: "Muss ich mich registrieren?",
-    answer: "Ja, um alle Funktionen nutzen zu können, musst du ein Konto erstellen.",
+    question: "Do I need to register?",
+    answer: "No registration is required. You simply choose a username to identify yourself in the chatroom, and you can start chatting right away.",
   },
   {
-    question: "Welche Daten werden gespeichert?",
-    answer: "Es werden nur notwendige Daten wie Benutzername und Chatverlauf gespeichert. Persönliche Daten werden vertraulich behandelt.",
+    question: "What data is stored?",
+    answer: "The app stores your chosen username and the messages you send in the shared chatroom. No personal data beyond the username is collected or stored.",
   },
   {
-    question: "Wie kann ich andere Nutzer melden?",
-    answer: "Tippe im Chat auf den Namen des Nutzers und wähle 'Melden'. Unser Team prüft dann den Vorfall.",
+    question: "How can I report other users?",
+    answer: "Currently, there is no feature to report users directly within the app. If you encounter any issues, please contact the support team through the FAQ or settings page.",
   },
   {
-    question: "Wird es Updates geben?",
-    answer: "Ja! Wir arbeiten ständig an Verbesserungen und neuen Features. Bleib dran.",
+    question: "Will there be updates?",
+    answer: "Yes! The app will continue to receive updates to improve functionality, add new features, and enhance user experience based on feedback.",
   },
 ];
 

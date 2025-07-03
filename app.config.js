@@ -2,8 +2,8 @@ import 'dotenv/config';
 
 export default {
   expo: {
-    name: "YourAppName",
-    slug: "your-app-slug",
+    name: "Wii n U Chat",
+    slug: "wii-n-u-chat",
     scheme: "acme",
     version: "1.0.0",
     extra: {
