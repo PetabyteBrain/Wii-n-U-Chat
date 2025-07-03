@@ -6,6 +6,11 @@ export default function HomeLayout() {
     return (
         <Tabs
             screenOptions={{
+                headerShown: false, // 👈 Das hier hinzufügen
+                tabBarStyle: {
+                    backgroundColor: "rgb(66, 107, 105)",
+                    height: 90,
+                },
                 tabBarStyle: {
                     backgroundColor: "rgb(96, 132, 108)",
                     height: 100, // etwas höher, damit genug Platz für alles bleibt
