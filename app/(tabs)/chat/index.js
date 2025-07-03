@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, TextInput, Button, FlatList } from "react-native";
-import { useState, useEffect, useRef } from "react";
-import { Stack } from "expo-router";
+import { useState, useEffect, useRef, useCallback } from "react";
+import { Stack, useFocusEffect } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Font from "expo-font";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -24,6 +24,15 @@ export default function ChatScreen() {
       else alert("Username not found! Please set it first.");
     });
   }, []);
+
+  useFocusEffect(
+    useCallback(() => {
+      AsyncStorage.getItem("username").then((storedUsername) => {
+        if (storedUsername) setUsername(storedUsername);
+        else alert("Username not found! Please set it first.");
+      });
+    }, [])
+  );
 
   const scrollToBottom = () => {
     if (flatListRef.current && messages.length > 0) {
