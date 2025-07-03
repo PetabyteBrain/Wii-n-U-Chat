@@ -42,7 +42,7 @@ export default function DeleteAccountButton() {
         end={{ x: 0, y: 1 }}
         style={styles.button}
       >
-        <Text style={styles.buttonText}>Delete Account</Text>
+        <Text style={styles.buttonText}>Delete data</Text>
         <DeleteIcon width={20} height={20} style={{ marginLeft: 0 }} />
       </LinearGradient>
     </TouchableOpacity>
