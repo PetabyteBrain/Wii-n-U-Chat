@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
     marginBottom: 100,
   },
   text: {
+    fontFamily: "Merriweather",
     color: "#FFFFFF",
     fontSize: 40,
     fontWeight: "900",

@@ -1,42 +1,59 @@
-import { View, Text, StyleSheet } from "react-native"
-import { useState } from "react"
-import { Link, Stack } from "expo-router"
+import { View, Text, StyleSheet } from "react-native";
+import { useState, useEffect } from "react";
+import { Stack } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
+import * as Font from "expo-font";
 
-import JumboTextTitle from "../components/JumboTextTitle"
-import AppButton from "../components/AppButton"
-import NameField from "../components/NameField"
+import JumboTextTitle from "../components/JumboTextTitle";
+import AppButton from "../components/AppButton";
+import NameField from "../components/NameField";
 
 export default function HomeScreen() {
-    const [username, setUsername] = useState("");
+  const [username, setUsername] = useState("");
+  const [fontsLoaded, setFontsLoaded] = useState(false);
 
-    const handleSubmit = () => {
-        if (username.trim()) {
-          // proceed with username
-          console.log("Submitted username:", username);
-        } else {
-          alert("Please enter a username");
-        }
-    };
+  useEffect(() => {
+    async function loadFonts() {
+      await Font.loadAsync({
+        Merriweather: require("../assets/fonts/Merriweather/Merriweather-Italic-VariableFont_opsz,wdth,wght.ttf"),
+      });
+      setFontsLoaded(true);
+    }
+    loadFonts();
+  }, []);
 
-    return (
-        <LinearGradient
-        colors={["#426B69", "#8BB174"]}
-        start={{ x: 0.5, y: 0 }}
-        end={{ x: 0.5, y: 1 }}
-        style={styles.container}
-      >
-        <Stack.Screen options={{ title: "Home" }} />
-        <JumboTextTitle>Wii & U Chat</JumboTextTitle>
-        <NameField username={username} setUsername={setUsername} onSubmit={handleSubmit} />
-      </LinearGradient>
-    )
+  const handleSubmit = () => {
+    if (username.trim()) {
+      console.log("Submitted username:", username);
+    } else {
+      alert("Please enter a username");
+    }
+  };
+
+  if (!fontsLoaded) {
+    // Optionally show a loading indicator or null while fonts load
+    return null;
+  }
+
+  return (
+    <LinearGradient
+      colors={["#426B69", "#8BB174"]}
+      start={{ x: 0.5, y: 0 }}
+      end={{ x: 0.5, y: 1 }}
+      style={styles.container}
+    >
+      <Stack.Screen options={{ title: "Home" }} />
+      <JumboTextTitle>Wii & U Chat</JumboTextTitle>
+      <NameField username={username} setUsername={setUsername} onSubmit={handleSubmit} />
+    </LinearGradient>
+  );
 }
+
 const styles = StyleSheet.create({
- container: {
- flex: 1,
- backgroundColor: "#fff",
- alignItems: "center",
- justifyContent: "center",
- },
-})
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});

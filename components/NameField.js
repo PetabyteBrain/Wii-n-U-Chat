@@ -1,8 +1,8 @@
 import React from "react";
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
-import Svg, { Path } from "react-native-svg";
-import SendArrow from "../assets/send-arrow.svg";
+import { LinearGradient } from "expo-linear-gradient";
 
+import SendArrow from "../assets/send-arrow.svg";
 
 export default function NameField({ username, setUsername, onSubmit }) {
   return (
@@ -15,9 +15,17 @@ export default function NameField({ username, setUsername, onSubmit }) {
         onChangeText={setUsername}
         style={styles.input}
       />
-      <TouchableOpacity onPress={onSubmit} style={styles.button} activeOpacity={0.8}>
-        <Text style={styles.buttonText}>Submit</Text>
-        <SendArrow width={20} height={20} style={{ marginLeft: 6 }} />
+      
+      <TouchableOpacity onPress={onSubmit} activeOpacity={0.8} style={{ borderRadius: 15, overflow: "hidden" }}>
+        <LinearGradient
+          colors={['rgba(66, 109, 130, 0.29)', 'rgba(66, 109, 130, 0.29)']}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 0, y: 1 }}
+          style={styles.button}
+        >
+          <Text style={styles.buttonText}>Submit</Text>
+          <SendArrow width={20} height={20} style={{ marginLeft: 6 }} />
+        </LinearGradient>
       </TouchableOpacity>
     </View>
   );
@@ -28,7 +36,6 @@ const styles = StyleSheet.create({
     width: "80%",
     maxWidth: 300,
     alignItems: "center",
-    gap: 12, // (React Native does not support gap, so use margin)
   },
   label: {
     color: "white",
@@ -44,22 +51,23 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     borderColor: "#ccc",
     borderWidth: 1,
-    color: "#000000",
+    color: "#ffffff",
     backgroundColor: "rgba(66, 107, 105, 0.29)",
+    marginBottom: 15,
   },
   button: {
-    marginTop: 12,
-    backgroundColor: "#007BFF",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
     paddingVertical: 12,
-    paddingHorizontal: 20,
-    borderRadius: 6,
+    paddingHorizontal: 40,
+    borderRadius: 15,  // keep the radius here consistent with overflow:hidden parent
   },
   buttonText: {
+    fontFamily: "Merriweather",
+    fontWeight: "400",  // matches normal weight
+    fontSize: 24,
+    lineHeight: 30,
     color: "white",
-    fontSize: 16,
-    fontWeight: "600",
   },
 });
