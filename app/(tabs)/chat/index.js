@@ -4,7 +4,6 @@ import { Stack } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
 import * as Font from "expo-font";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-
 import { database } from "../../../firebase";
 import { ref, push, set, onValue, serverTimestamp } from "firebase/database";
 
@@ -126,7 +125,7 @@ export default function ChatScreen() {
           onSubmitEditing={sendMessage}
           returnKeyType="send"
         />
-        <Button title="Send" onPress={sendMessage} />
+        <Button style={styles.button} title="Send" onPress={sendMessage}  />
       </View>
     </LinearGradient>
   );
@@ -169,11 +168,16 @@ const styles = StyleSheet.create({
   },
   input: {
     flex: 1,
-    backgroundColor: "rgba(255,255,255,0.1)",
-    color: "#fff",
+    backgroundColor: "#D9D9D9",
     paddingHorizontal: 12,
     paddingVertical: 8,
-    borderRadius: 20,
-    marginRight: 10,
+    borderTopLeftRadius: 10,
+    borderBottomLeftRadius: 10,
+    color: "#000",
+  },
+  button: {
+    backgroundColor: "#426D82",
+    borderTopRightRadius: 10,
+    borderBottomRightRadius: 10,
   },
 });
