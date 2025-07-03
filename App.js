@@ -9,7 +9,7 @@ export default function App() {
   useEffect(() => {
     async function loadFonts() {
       await Font.loadAsync({
-        Merriweather: require('./assets/fonts/Merriweather/Merriweather/Merriweather-Italic-VariableFont_opsz,wdth,wght.ttf'),
+        Merriweather: require('./assets/fonts/Merriweather/Merriweather/Merriweather-VariableFont_opsz,wdth,wght.ttf'),
       });
       setFontsLoaded(true);
     }
