@@ -45,7 +45,6 @@ export default function SettingsScreen() {
           style={styles.container}
         >
           <Stack.Screen options={{ title: "Settings" }} />
-          <JumboText>Wii & U Chat</JumboText>
           <JumboTextsubTitle>Settings</JumboTextsubTitle>
           <NameField username={username} setUsername={setUsername} onSubmit={handleSubmit} />
         </LinearGradient>

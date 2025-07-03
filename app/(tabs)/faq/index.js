@@ -47,7 +47,6 @@ export default function FaqScreen() {
     >
       <Stack.Screen options={{ title: "FAQ" }} />
       <ScrollView contentContainerStyle={styles.scrollContainer}>
-        <JumboText>Wii & U Chat</JumboText>
         <JumboTextsubTitle>FAQ</JumboTextsubTitle>
 
         <View style={styles.faqWrapper}>

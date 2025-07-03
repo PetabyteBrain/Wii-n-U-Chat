@@ -107,7 +107,6 @@ export default function ChatScreen() {
       style={styles.container}
     >
       <Stack.Screen options={{ title: "Chat" }} />
-      <JumboText>Wii & U Chat</JumboText>
 
       <FlatList
         ref={flatListRef}
