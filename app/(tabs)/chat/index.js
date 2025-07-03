@@ -1,16 +1,57 @@
-import { View, Text, StyleSheet, TextInput, Button, FlatList, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  FlatList,
+  TouchableOpacity,
+} from "react-native";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Stack, useFocusEffect } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
-import * as Font from "expo-font";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { database } from "../../../firebase";
 import { ref, push, set, onValue, serverTimestamp } from "firebase/database";
 
-import JumboText from "../../../components/JumboText";
 import SendArrow from "../../../assets/send-arrow.svg";
-import MessageBubble from "../../../components/MessageBubble";
+
+// MessageBubble direkt hier eingefügt
+function MessageBubble({ message, isMe }) {
+  return (
+    <View
+      style={[
+        styles.messageContainer,
+        isMe ? styles.myMessage : styles.otherMessage,
+      ]}
+    >
+      <View style={styles.usernameRow}>
+  <Text
+    style={[
+      styles.username,
+      isMe ? styles.myUsername : styles.otherUsername,
+    ]}
+  >
+    {message.username}
+  </Text>
+  <Text style={styles.timestamp}>
+    {message.timestamp
+      ? new Date(message.timestamp).toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        })
+      : ""}
+  </Text>
+</View>
+
+
+      <View style={[styles.bubble, isMe ? styles.myBubble : styles.otherBubble]}>
+        <Text style={styles.text}>{message.message}</Text>
+        
+      </View>
+    </View>
+  );
+}
 
 export default function ChatScreen() {
   const [username, setUsername] = useState("");
@@ -19,7 +60,6 @@ export default function ChatScreen() {
 
   const flatListRef = useRef(null);
 
-  // Load username from AsyncStorage on mount
   useEffect(() => {
     AsyncStorage.getItem("username").then((storedUsername) => {
       if (storedUsername) setUsername(storedUsername);
@@ -48,7 +88,6 @@ export default function ChatScreen() {
     scrollToBottom();
   }, [messages]);
 
-  // Listen for new messages in Realtime DB
   useEffect(() => {
     const messagesRef = ref(database, "messages");
 
@@ -62,7 +101,6 @@ export default function ChatScreen() {
           timestamp: msg.timestamp,
         }));
 
-        // Sort messages by timestamp ascending
         loadedMessages.sort((a, b) => a.timestamp - b.timestamp);
 
         setMessages(loadedMessages);
@@ -74,7 +112,6 @@ export default function ChatScreen() {
     return () => unsubscribe();
   }, []);
 
-  // Send message to Firebase
   const sendMessage = () => {
     if (!message.trim()) return;
 
@@ -92,13 +129,6 @@ export default function ChatScreen() {
     });
 
     setMessage("");
-  };
-
-  // Format timestamp nicely
-  const formatTimestamp = (ts) => {
-    if (!ts) return "";
-    const date = new Date(ts);
-    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   };
 
   return (
@@ -135,17 +165,7 @@ export default function ChatScreen() {
         <TouchableOpacity
           onPress={sendMessage}
           activeOpacity={0.8}
-          style={{
-            backgroundColor: "#426D82",
-            borderTopRightRadius: 10,
-            borderBottomRightRadius: 10,
-            borderTopLeftRadius: 0,
-            borderBottomLeftRadius: 0,
-            paddingHorizontal: 11, // optional: adds some spacing inside the button
-            paddingVertical: 8,
-            justifyContent: "center",
-            alignItems: "center",
-          }}
+          style={styles.sendButton}
         >
           <SendArrow width={30} height={30} style={{ marginLeft: 6 }} />
         </TouchableOpacity>
@@ -164,26 +184,6 @@ const styles = StyleSheet.create({
     flex: 1,
     marginVertical: 10,
   },
-  messageItem: {
-    backgroundColor: "rgba(255,255,255,0.2)",
-    padding: 10,
-    borderRadius: 10,
-    marginBottom: 8,
-  },
-  messageUser: {
-    fontWeight: "bold",
-    color: "#fff",
-    marginBottom: 2,
-  },
-  messageText: {
-    color: "#eee",
-  },
-  messageTime: {
-    color: "#ccc",
-    fontSize: 10,
-    marginTop: 4,
-    textAlign: "right",
-  },
   inputRow: {
     flexDirection: "row",
     alignItems: "center",
@@ -194,12 +194,89 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     fontSize: 17,
-    fontFamily: "Merriweather",
     backgroundColor: "#D9D9D9",
     paddingHorizontal: 12,
     paddingVertical: 8,
     borderTopLeftRadius: 10,
     borderBottomLeftRadius: 10,
     color: "#000",
+  },
+  sendButton: {
+    backgroundColor: "#426D82",
+    borderTopRightRadius: 10,
+    borderBottomRightRadius: 10,
+    paddingHorizontal: 11,
+    paddingVertical: 8,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+
+  // MESSAGE BUBBLE STYLES
+  messageContainer: {
+    marginBottom: 10,
+    paddingHorizontal: 10,
+    flexDirection: "column",
+    alignItems: "flex-start",
+
+  },
+  myMessage: {
+    alignItems: "flex-end",
+  },
+  otherMessage: {
+    alignItems: "flex-start",
+  },
+  usernameContainer: {
+    marginBottom: 2,
+    paddingHorizontal: 5,
+  },
+  username: {
+    fontSize: 12,
+    fontWeight: "bold",
+    paddingRight: "10%"
+    
+  },
+  myUsername: {
+    textAlign: "right",
+    color: "#8BB174",
+  },
+  otherUsername: {
+    textAlign: "left",
+    color: "#333",
+  },
+  usernameRow: {
+  flexDirection: "row",
+  alignItems: "center",
+},
+timestamp: {
+  fontSize: 10,
+  marginLeft: "3%", // manueller Abstand
+  color: "#555",
+  textAlign: "right",
+},
+
+
+  bubble: {
+    minWidth: "35%",
+    maxWidth: "80%",
+    padding: 10,
+    borderRadius: 20,
+  },
+  myBubble: {
+    backgroundColor: "#8BB174",
+    borderBottomRightRadius: 0,
+    textAlign: "right",
+  },
+  otherBubble: {
+    backgroundColor: "#ccc",
+    borderBottomLeftRadius: 0,
+  },
+  text: {
+    color: "#000",
+  },
+  timestamp: {
+    fontSize: 10,
+    marginTop: 4,
+    color: "#555",
+    textAlign: "right",
   },
 });
