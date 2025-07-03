@@ -43,7 +43,7 @@ export default function DeleteAccountButton() {
         style={styles.button}
       >
         <Text style={styles.buttonText}>Delete Account</Text>
-        <DeleteIcon width={20} height={20} style={{ marginLeft: -10 }} />
+        <DeleteIcon width={20} height={20} style={{ marginLeft: 0 }} />
       </LinearGradient>
     </TouchableOpacity>
   );
@@ -54,17 +54,17 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    paddingVertical: 12,
-    paddingHorizontal: 20,
+    paddingVertical: 10,
+    paddingHorizontal: 18,
     borderRadius: 15,
   },
   buttonText: {
     fontFamily: "Merriweather",
     fontWeight: "300",
-    fontSize: 15,
-    lineHeight: 30,
+    fontSize: 14,
+    lineHeight: 14,
     margin: 0,
-    padding: 0,
+    paddingHorizontal: 10,
     color: "white",
   },
 });
