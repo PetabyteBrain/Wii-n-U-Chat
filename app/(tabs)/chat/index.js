@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TextInput, Button, FlatList } from "react-native";
+import { View, Text, StyleSheet, TextInput, Button, FlatList, TouchableOpacity } from "react-native";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Stack, useFocusEffect } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
@@ -8,6 +8,7 @@ import { database } from "../../../firebase";
 import { ref, push, set, onValue, serverTimestamp } from "firebase/database";
 
 import JumboText from "../../../components/JumboText";
+import SendArrow from "../../../assets/send-arrow.svg";
 
 export default function ChatScreen() {
   const [username, setUsername] = useState("");
@@ -134,7 +135,23 @@ export default function ChatScreen() {
           onSubmitEditing={sendMessage}
           returnKeyType="send"
         />
-        <Button style={styles.button} title="Send" onPress={sendMessage}  />
+        <TouchableOpacity
+          onPress={sendMessage}
+          activeOpacity={0.8}
+          style={{
+            backgroundColor: "#426D82",
+            borderTopRightRadius: 10,
+            borderBottomRightRadius: 10,
+            borderTopLeftRadius: 0,
+            borderBottomLeftRadius: 0,
+            paddingHorizontal: 11, // optional: adds some spacing inside the button
+            paddingVertical: 8,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <SendArrow width={30} height={30} style={{ marginLeft: 6 }} />
+        </TouchableOpacity>
       </View>
     </LinearGradient>
   );
@@ -174,19 +191,18 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     marginTop: 10,
+    marginVertical: -10,
+    marginHorizontal: -5,
   },
   input: {
     flex: 1,
+    fontSize: 17,
+    fontFamily: "Merriweather",
     backgroundColor: "#D9D9D9",
     paddingHorizontal: 12,
     paddingVertical: 8,
     borderTopLeftRadius: 10,
     borderBottomLeftRadius: 10,
     color: "#000",
-  },
-  button: {
-    backgroundColor: "#426D82",
-    borderTopRightRadius: 10,
-    borderBottomRightRadius: 10,
   },
 });
