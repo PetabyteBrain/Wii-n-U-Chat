@@ -101,18 +101,14 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Dein Name – [@twitter_handle](https://twitter.com/twitter_handle) – email@email_client.com  
+Spyros Catéchis - spyros.catechis@bbcag.ch
+Nicolas Ammeter - nicolas.ammetter@bbcag.ch
+David Borne - david.borne@bbcag.ch
 Projekt-URL: [https://github.com/petabytebrain/Wii-n-U-Chat](https://github.com/petabytebrain/Wii-n-U-Chat)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Acknowledgments
 
-* OpenAI ChatGPT für redaktionelle Hilfe
-* [othneildrew/Best-README-Template](https://github.com/othneildrew/Best-README-Template)
-* Deine Community & Tester:innen
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [contributors-shield]: https://img.shields.io/github/contributors/petabytebrain/Wii-n-U-Chat.svg?style=for-the-badge
