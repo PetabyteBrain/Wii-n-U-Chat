@@ -1,3 +1,6 @@
+/*Einstiegsseite*/
+
+
 import { View, Text, StyleSheet } from "react-native";
 import { useState, useEffect } from "react";
 import { Stack, useRouter } from "expo-router";
@@ -12,7 +15,7 @@ import NameField from "../components/NameField";
 export default function HomeScreen() {
   const [username, setUsername] = useState("");
   const [fontsLoaded, setFontsLoaded] = useState(false);
-  
+
 
   useEffect(() => {
     async function loadFonts() {
