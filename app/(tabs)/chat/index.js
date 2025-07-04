@@ -1,4 +1,8 @@
 import {
+  KeyboardAvoidingView,
+  Platform,
+  Keyboard,
+  TouchableWithoutFeedback,
   View,
   Text,
   StyleSheet,
@@ -123,45 +127,54 @@ export default function ChatScreen() {
   
 
   return (
-    <LinearGradient
-      colors={["#426B69", "#8BB174"]}
-      start={{ x: 0.5, y: 0 }}
-      end={{ x: 0.5, y: 1 }}
-      style={styles.container}
-    >
-      <Stack.Screen options={{ title: "Chat" }} />
-
-      <FlatList
-        ref={flatListRef}
-        style={styles.messagesList}
-        data={messages}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <MessageBubble message={item} isMe={item.username === username} />
-        )}
-        onContentSizeChange={scrollToBottom}
-        onLayout={scrollToBottom}
-      />
-
-      <View style={styles.inputRow}>
-        <TextInput
-          style={styles.input}
-          placeholder="Type your message..."
-          placeholderTextColor="#aaa"
-          value={message}
-          onChangeText={setMessage}
-          onSubmitEditing={sendMessage}
-          returnKeyType="send"
-        />
-        <TouchableOpacity
-          onPress={sendMessage}
-          activeOpacity={0.8}
-          style={styles.sendButton}
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        keyboardVerticalOffset={Platform.OS === "ios" ? 90 : 0} // tweak as needed
+      >
+        <LinearGradient
+          colors={["#426B69", "#8BB174"]}
+          start={{ x: 0.5, y: 0 }}
+          end={{ x: 0.5, y: 1 }}
+          style={styles.container}
         >
-          <SendArrow width={30} height={30} style={{ marginLeft: 6 }} />
-        </TouchableOpacity>
-      </View>
-    </LinearGradient>
+          <Stack.Screen options={{ title: "Chat" }} />
+      
+          <FlatList
+            ref={flatListRef}
+            style={styles.messagesList}
+            data={messages}
+            keyExtractor={(item) => item.id}
+            renderItem={({ item }) => (
+              <MessageBubble message={item} isMe={item.username === username} />
+            )}
+            onContentSizeChange={scrollToBottom}
+            onLayout={scrollToBottom}
+          />
+    
+          <View style={styles.inputRow}>
+            <TextInput
+              style={styles.input}
+              placeholder="Type your message..."
+              placeholderTextColor="#aaa"
+              value={message}
+              onChangeText={setMessage}
+              onSubmitEditing={sendMessage}
+              returnKeyType="send"
+            />
+            <TouchableOpacity
+              onPress={sendMessage}
+              activeOpacity={0.8}
+              style={styles.sendButton}
+            >
+              <SendArrow width={30} height={30} style={{ marginLeft: 6 }} />
+            </TouchableOpacity>
+          </View>
+        </LinearGradient>
+      </KeyboardAvoidingView>
+    </TouchableWithoutFeedback>
+    
   );
 }
 
