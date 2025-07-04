@@ -131,7 +131,7 @@ export default function ChatScreen() {
       <KeyboardAvoidingView
         style={{ flex: 1 }}
         behavior={Platform.OS === "ios" ? "padding" : "height"}
-        keyboardVerticalOffset={Platform.OS === "ios" ? 90 : 0} // tweak as needed
+        keyboardVerticalOffset={Platform.OS === "ios" ? 120 : 80} // tweak as needed
       >
         <LinearGradient
           colors={["#426B69", "#8BB174"]}
