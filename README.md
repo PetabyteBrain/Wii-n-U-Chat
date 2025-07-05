@@ -42,6 +42,8 @@
 
 ## About The Project
 
+<img title="a title" alt="Alt text" src="/docs/images/start_screen.png" width=400px >
+
 
 **Wii & U Chat** ist eine benutzerfreundliche Chat-Applikation, die Nutzer in einem gemeinsamen Chatraum verbindet. Ziel ist es, digitale Kommunikation so unkompliziert wie möglich zu gestalten – ohne überladene Funktionen, sondern mit Fokus auf eine zentrale, gemeinschaftliche Kommunikation.
 
@@ -71,6 +73,18 @@ Die App bietet:
 ## Usage
 
 Nach Eingabe eines Benutzernamens gelangen Nutzer direkt in den Chatraum, in dem alle bisherigen Nachrichten sichtbar sind. Die intuitive Navigation erlaubt schnellen Wechsel zu Einstellungen oder FAQ. Ideal für Gruppen, Communities oder einfache digitale Treffen.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## images
+
+<img title="a title" alt="Alt text" src="/docs/images/chat_screen.png" width=400px >
+
+<img title="a title" alt="Alt text" src="/docs/images/faq_screen.png" width=400px >
+
+<img title="a title" alt="Alt text" src="/docs/images/settings_screen.png" width=400px >
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
